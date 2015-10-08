@@ -18,14 +18,8 @@ require 'config/config.php';
 // si on essaye de se connecter ou de se déconnecter
 if(isset($_GET['connect'])||isset($_GET['deconnect'])){
     require 'controller/ConnectController.php';
-}
-
-// si on est connecté comme admin
-if(isset($_SESSION['idsession'])){
+}elseif(isset($_SESSION['idsession'])){ // si on est connecté comme admin
     require 'controller/AdminController.php';
-}
-
-// sinon (on est un simple visiteur du site)
- else {
+} else { // sinon (on est un simple visiteur du site)
     require 'controller/UserController.php';
 }
