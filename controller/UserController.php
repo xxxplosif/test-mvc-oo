@@ -9,6 +9,7 @@ require 'model/Ecrivain.php';
 require 'model/PeriodeManager.php';
 require 'model/LivreManager.php';
 require 'model/EcrivainManager.php';
+require 'model/EcrivainAdminManager.php';
 
 if(isset($_GET['idperiode'])){
     // require all links in menu
@@ -36,9 +37,9 @@ if(isset($_GET['idperiode'])){
     // récupération de l'écrivain en question
     $id = (int) $_GET['idecrivain'];
 
-    $ecrivain_m = new EcrivainManager(MaPDO::getConnection(DB_SELECT, DB_USER, DB_PWD, TRUE));
+    $ecrivain_a_m = new EcrivainAdminManager(MaPDO::getConnection(DB_SELECT, DB_USER, DB_PWD, TRUE));
 
-    $ecrivain = $ecrivain_m->recupJointure($id);
+    $ecrivain = $ecrivain_a_m->recupJointure($id);
     $ids = explode('||',$ecrivain['ids']);
     $titres = explode('||',$ecrivain['titres']);
     $descriptions = explode('||',$ecrivain['descriptions']);
