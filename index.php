@@ -23,3 +23,4 @@ if(isset($_GET['connect'])||isset($_GET['deconnect'])){
 } else { // sinon (on est un simple visiteur du site)
     require 'controller/UserController.php';
 }
+

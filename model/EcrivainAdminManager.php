@@ -27,4 +27,20 @@ class EcrivainAdminManager extends EcrivainManager {
             ");
     }
 
+    public function deleteWriter($int){
+        return $this->db->exec("
+            DELETE FROM ecrivain
+            WHERE id = $int
+            ");
+    }
+
+    public function updateWriter($lenom, $labio, $siecle, $id){
+        return $this->db->exec("
+            UPDATE ecrivain SET
+            lenom = '$lenom',
+            labio = '$labio',
+            sciecle_id = $siecle
+            WHERE id = $id
+            ");
+    }
 }

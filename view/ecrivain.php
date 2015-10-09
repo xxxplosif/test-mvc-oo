@@ -15,7 +15,12 @@
 
     <?php foreach($titres AS $key => $value): ?>
         <h2><?php echo $titres[$key] ?></h2>
-        <p><?php echo substr($descriptions[$key], 0, 100) ?>... <a href="./?idlivre=<?php echo $ids[$key] ?>">Lire plus</a></p>
+        <p><?php
+        $txt = substr($descriptions[$key], 0, 100);
+        $pos = strrpos($txt, ' ');
+        $txt = substr($txt, 0, $pos);
+        echo $txt;
+        ?>... <a href="./?idlivre=<?php echo $ids[$key] ?>">Lire plus</a></p>
     <?php endforeach; ?>
 </body>
 </html>

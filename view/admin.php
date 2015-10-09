@@ -7,11 +7,10 @@
 <body>
     <h1>Admin</h1>
     <ul>
+        <li><a href="./">Ajouter des écrivains et des livres</a></li>
+        <li><a href="./?manage">Gérer les écrivains et les livres</a></li>
         <li><a href="./?deconnect">Déconnexion</a></li>
     </ul>
-
-    <?php if (isset($error)) echo '<mark>' . $error . '</mark>' ?>
-    <?php if (isset($success)) echo '<mark>' . $success . '</mark>' ?>
 
     <h2>Ajouter un écrivain</h2>
 
